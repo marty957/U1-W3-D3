@@ -20,6 +20,7 @@ form.onsubmit = function (event) {
   mainForContainar.appendChild(divContainer);
   divContainer.className = "task-contaneir";
   writtenTask.style.display = "inline-block";
+  divContainer.style.borderRadius = "2px 2px 2px";
 
   /*creazione bottone per eliminare la task aggiunta*/
   const bottunToCancel = document.createElement("button");
@@ -44,6 +45,9 @@ form.onsubmit = function (event) {
     else {
       writtenTask.style.textDecoration = "none";
     }
+  };
+  writtenTask.onmousemove = function () {
+    writtenTask.style.cursor = "pointer";
   };
   form.reset();
 };
