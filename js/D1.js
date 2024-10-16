@@ -26,6 +26,7 @@ form.onsubmit = function (event) {
   const bottunToCancel = document.createElement("button");
   bottunToCancel.type = "button";
   bottunToCancel.className = "fakeButton";
+  bottunToCancel.innerText = "X";
 
   /*aggiunta del bottone e della stringa*/
   writtenTask.innerHTML += `${InputAdded.task}`;
@@ -41,10 +42,11 @@ form.onsubmit = function (event) {
   /*funzione per le task completate*/
 
   writtenTask.onclick = function () {
-    if ((writtenTask.style.textDecoration = "none")) writtenTask.style.textDecoration = "line-through";
+    writtenTask.classList.toggle("pointerOnOff");
+    /*if ((writtenTask.style.textDecoration = "none")) writtenTask.style.textDecoration = "line-through";
     else {
       writtenTask.style.textDecoration = "none";
-    }
+    }*/
   };
   writtenTask.onmousemove = function () {
     writtenTask.style.cursor = "pointer";
